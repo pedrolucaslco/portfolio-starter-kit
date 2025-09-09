@@ -1,16 +1,15 @@
-import { BlogPosts } from 'app/components/posts'
+import { Projects } from 'app/components/projects'
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
+  title: 'Projects',
+  description: 'Get to Know some of my work',
 }
 
 export default function Page() {
   return (
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Projects</h1>
-      <p>Soon</p>
-      {/* <BlogPosts /> */}
+      <Projects />
     </section>
   )
 }
