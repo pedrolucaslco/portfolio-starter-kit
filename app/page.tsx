@@ -3,12 +3,17 @@ import { BlogPosts } from 'app/components/posts'
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h1 className="text-xl text-neutral-300 font-semibold tracking-tighter">
         Pedro Lucas
       </h1>
+      <p className='mb-8 text-gray-500 font-medium'>Full stack developer at EasySchool</p>
+      <div className="text-neutral-400 font-medium">
       <p className="mb-4">
-        {`I’m a full stack developer at EasySchool, building and improving systems that impact over 450,000 users in the education sector. I work primarily with Laravel, combining my background in programming, graphic design, and UX/UI to create digital solutions that streamline processes, make technology more accessible, and deliver experiences that are functional, intuitive, and visually engaging.`}
+        I am a full stack developer at <a href="https://www.easyschool.com.br" class='underline text-neutral-200'>EasySchool</a>, a school management system by Swisslink used by over 450,000 users across Brazil. I work on developing solutions focused on user experience and process optimization, making daily school operations more agile and efficient.
       </p>
+      <p>I have over 5 years of experience in graphic design and UX/UI, working with visual identities, digital products, and communication strategies. I combine technology and design to deliver functional, fast, and visually consistent solutions aligned with business goals, generating real value and a cohesive user experience.
+      </p>
+      </div>
       <div className="my-8">
         <BlogPosts />
       </div>
