@@ -8,7 +8,7 @@ export default function Page() {
         <h1 className="text-neutral-300 font-semibold">
           Pedro Lucas
         </h1>
-        <p className='mb-8 text-gray-500 font-medium'>Full stack developer at EasySchool</p>
+        <p className='mb-8 text-neutral-500 font-medium'>Full stack developer at EasySchool</p>
         <div className="text-neutral-400 font-medium">
           <p className="mb-4">
             {`I'm`} a full stack developer at <a href="https://www.easyschool.com.br" target="_blank" className='underline text-neutral-200'>EasySchool</a>, a school management system by <a href="https://swisslink.com.br/" target="_blank" className='underline text-neutral-200'>Swisslink</a> used by over 450,000 users across Brazil. I design and build soluctions focused on user experience and process optimization, making daily school operations more agile and efficient.
