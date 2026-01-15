@@ -47,7 +47,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-neutral-200 dark:bg-neutral-950',
+        'text-neutral-800 bg-neutral-50 dark:text-neutral-200 dark:bg-neutral-950',
         GeistSans.variable,
         GeistMono.variable
       )}
