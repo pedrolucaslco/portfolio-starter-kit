@@ -34,6 +34,9 @@ const translations: Record<Lang, Record<string, string>> = {
     'section.view-all': 'View all',
     'section.open-blog': 'Open full blog',
     'section.experience': 'Full Experience',
+    'section.support': 'Support',
+    'section.support-desc':
+      'Support my work',
     'section.contribute': 'Contribute',
     'section.contribute-desc':
       'If you like my work, consider contributing',
@@ -70,6 +73,9 @@ const translations: Record<Lang, Record<string, string>> = {
     'section.view-all': 'Ver todos',
     'section.open-blog': 'Abrir blog completo',
     'section.experience': 'Experiência Completa',
+    'section.support': 'Apoiar',
+    'section.support-desc':
+      'Apoie meu trabalho',
     'section.contribute': 'Contribuir',
     'section.contribute-desc':
       'Se você gosta do meu trabalho, considere contribuir',

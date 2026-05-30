@@ -3,7 +3,7 @@ import { WhyHireMe } from "./components/why-hire-me";
 import { ProjectCards } from "./components/project-cards";
 import { BlogPreview } from "./components/blog-preview";
 import { Timeline } from "./components/timeline";
-import { Contribute } from "./components/contribute";
+import { Support } from "./components/support";
 import { Trans } from "./lib/i18n";
 import { getProjects } from "app/section-template/utils";
 import { getBlogPosts } from "app/blog/utils";
@@ -55,7 +55,7 @@ export default function Page() {
         </div>
       </section>
 
-      <Contribute />
+      <Support />
 
       <section id="work" className="px-8 py-16 scroll-mt-24">
         <div className="max-w-4xl">
