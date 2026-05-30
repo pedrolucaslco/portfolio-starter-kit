@@ -60,6 +60,8 @@ export default async function ProjectPage({ params }) {
     notFound()
   }
 
+  let isFeira = slug === 'feira'
+
   return (
     <article className="px-8">
       <script
@@ -84,17 +86,25 @@ export default async function ProjectPage({ params }) {
           }),
         }}
       />
-      <header className="mb-10 pt-4">
-        <h1 className="text-3xl font-medium tracking-tight mb-3 text-neutral-900 dark:text-neutral-100">
-          {project.metadata.title}
-        </h1>
-        <p className="text-sm tabular-nums text-neutral-500 dark:text-neutral-400">
-          {formatDate(project.metadata.publishedAt)}
-        </p>
-      </header>
-      <div className="prose">
-        <CustomMDX source={project.content} />
-      </div>
+      {isFeira ? (
+        <div className="max-w-4xl mx-auto pt-4">
+          <CustomMDX source={project.content} />
+        </div>
+      ) : (
+        <>
+          <header className="mb-10 pt-4">
+            <h1 className="text-3xl font-medium tracking-tight mb-3 text-neutral-900 dark:text-neutral-100">
+              {project.metadata.title}
+            </h1>
+            <p className="text-sm tabular-nums text-neutral-500 dark:text-neutral-400">
+              {formatDate(project.metadata.publishedAt)}
+            </p>
+          </header>
+          <div className="prose">
+            <CustomMDX source={project.content} />
+          </div>
+        </>
+      )}
     </article>
   )
 }

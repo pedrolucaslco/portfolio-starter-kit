@@ -2,23 +2,24 @@
 title: 'PWA • Feira'
 publishedAt: '2026-05-29'
 type: tools
-summary: 'Feira is a offline-first grocery list PWA that helps you track your monthly budget, organize items by sections, and share lists with family in real time.'
+summary: 'Feira is an offline-first grocery list PWA that helps you track your monthly budget, organize items by sections, and share lists with family in real time.'
 ---
 
-import Image from 'next/image'
-
-<Image
-  src="/images/feira.jpg"
-  alt="Feira app screenshot"
-  width={600}
-  height={400}
+<ProductHero
+  title="Sua lista de compras inteligente"
+  description="Organize suas compras, acompanhe seu orçamento mensal e compartilhe a lista com quem precisa — tudo offline, direto do celular."
+  ctaHref="https://feira-flame.vercel.app"
+  ctaText="Abrir o App"
+  ghHref="https://github.com/pedrolucaslco/feira"
 />
+
+<div className="prose prose-neutral dark:prose-invert max-w-none">
 
 ## O que é o Feira?
 
 O **Feira** é um PWA completo para organizar sua lista de compras e acompanhar o orçamento mensal do mercado. Ele foi projetado para resolver um fluxo simples mas essencial: adicionar itens, ir ao mercado, dar check, finalizar a compra e atualizar o saldo.
 
-<a href="https://feira-flame.vercel.app" target="_blank" rel="noopener noreferrer">Acessar o Feira →</a>
+Além de ser uma lista de compras, o app ajuda a responder uma pergunta prática: **quanto ainda posso gastar no mercado este mês?**
 
 ## Funcionalidades principais
 
@@ -30,7 +31,6 @@ O **Feira** é um PWA completo para organizar sua lista de compras e acompanhar 
 - **Compartilhamento em tempo real** via Supabase — itens marcados sincronizam entre usuários
 - **Offline-first**: funciona sem internet com IndexedDB local e sincronização quando voltar
 - **Aba de refeições** com listas isoladas e cópia de itens para a lista de compras
-- **Perfil local** com avatar, saudação e preferências de edição (modal ou inline)
 - **Espaços compartilhados**: crie um espaço, compartilhe o código e faça compras em conjunto
 
 ## Stack
@@ -39,8 +39,26 @@ HTML, CSS, JavaScript vanilla, IndexedDB, Service Worker, DaisyUI/Tailwind, Supa
 
 ## Status
 
-Em desenvolvimento ativo — POC funcional publicada em <a href="https://feira-flame.vercel.app" target="_blank" rel="noopener noreferrer">feira-flame.vercel.app</a>.
+Em desenvolvimento ativo — POC funcional já publicada.
 
----
+</div>
 
-Design & Development: [Pedro Lucas](https://pedrolucaslco.vercel.app)
+<div className="not-prose mt-12 pt-8 border-t border-[#e5e5e5] dark:border-[#262626] flex flex-wrap gap-4 justify-center">
+  <a
+    href="https://feira-flame.vercel.app"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-900 dark:border-neutral-100 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 px-6 py-3 hover:opacity-80 transition-opacity"
+  >
+    Abrir o App
+  </a>
+  <a
+    href="https://github.com/pedrolucaslco/feira"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 text-sm border border-[#e5e5e5] dark:border-[#262626] px-6 py-3 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-[#f2f2f2] dark:hover:bg-[#141414] transition-colors"
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" /></svg>
+    Código no GitHub
+  </a>
+</div>
