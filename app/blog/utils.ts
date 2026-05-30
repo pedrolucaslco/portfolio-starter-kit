@@ -19,7 +19,7 @@ function parseFrontmatter(fileContent: string) {
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
-    value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
+    value = value.replace(/^['"](.*)['"]$/, '$1')
     metadata[key.trim() as keyof Metadata] = value
   })
 
@@ -49,8 +49,12 @@ function getMDXData(dir) {
   })
 }
 
+let cachedPosts: ReturnType<typeof getMDXData> | null = null
+
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+  if (cachedPosts) return cachedPosts
+  cachedPosts = getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+  return cachedPosts
 }
 
 export function formatDate(date: string, includeRelative = false) {

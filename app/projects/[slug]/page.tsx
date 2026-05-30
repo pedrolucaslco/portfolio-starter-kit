@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }) {
-  let project = getProjects().find((project) => project.slug === params.slug)
+export async function generateMetadata({ params }) {
+  let { slug } = await params
+  let project = getProjects().find((project) => project.slug === slug)
   if (!project) {
     return
   }
@@ -51,15 +52,16 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Projects({ params }) {
-  let project = getProjects().find((project) => project.slug === params.slug)
+export default async function ProjectPage({ params }) {
+  let { slug } = await params
+  let project = getProjects().find((project) => project.slug === slug)
 
   if (!project) {
     notFound()
   }
 
   return (
-    <section>
+    <article className="px-8">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -82,17 +84,17 @@ export default function Projects({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {project.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+      <header className="mb-10 pt-4">
+        <h1 className="text-3xl font-medium tracking-tight mb-3 text-neutral-900 dark:text-neutral-100">
+          {project.metadata.title}
+        </h1>
+        <p className="text-sm tabular-nums text-neutral-500 dark:text-neutral-400">
           {formatDate(project.metadata.publishedAt)}
         </p>
-      </div>
-      <article className="prose">
+      </header>
+      <div className="prose">
         <CustomMDX source={project.content} />
-      </article>
-    </section>
+      </div>
+    </article>
   )
 }

@@ -18,9 +18,7 @@ function Table({ data }) {
 
   return (
     <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
+      <thead>{headers}</thead>
       <tbody>{rows}</tbody>
     </table>
   )
@@ -57,11 +55,11 @@ function slugify(str) {
   return str
     .toString()
     .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/&/g, '-and-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
 }
 
 function createHeading(level) {
@@ -82,7 +80,6 @@ function createHeading(level) {
   }
 
   Heading.displayName = `Heading${level}`
-
   return Heading
 }
 
@@ -96,7 +93,7 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
-  Table,
+  table: Table,
 }
 
 export function CustomMDX(props) {

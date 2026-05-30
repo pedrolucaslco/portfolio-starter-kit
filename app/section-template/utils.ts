@@ -4,6 +4,7 @@ import path from 'path'
 type Metadata = {
   title: string
   publishedAt: string
+  type?: string
   summary: string
   image?: string
 }
@@ -19,7 +20,7 @@ function parseFrontmatter(fileContent: string) {
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
-    value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
+    value = value.replace(/^['"](.*)['"]$/, '$1')
     metadata[key.trim() as keyof Metadata] = value
   })
 
@@ -53,8 +54,12 @@ export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
 }
 
+let cachedProjects: ReturnType<typeof getMDXData> | null = null
+
 export function getProjects() {
-  return getMDXData(path.join(process.cwd(), 'app', 'projects', 'list'))
+  if (cachedProjects) return cachedProjects
+  cachedProjects = getMDXData(path.join(process.cwd(), 'app', 'projects', 'list'))
+  return cachedProjects
 }
 
 export function formatDate(date: string, includeRelative = false) {
