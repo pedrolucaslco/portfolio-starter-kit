@@ -55,7 +55,7 @@ export default function Page() {
         </div>
       </section>
 
-      <Support />
+      {/* <Support /> */}
 
       <section id="work" className="px-8 py-16 scroll-mt-24">
         <div className="max-w-4xl">
