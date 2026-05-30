@@ -1,42 +1,80 @@
-# Portfolio Blog Starter
+# pedrolucaslco — Portfolio
 
-This is a porfolio site template complete with a blog. Includes:
+Personal portfolio and blog built with Next.js 16, Tailwind CSS v4, and MDX.
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+## Sections
 
-## Demo
+- **Hero** — bio, social links, and about
+- **Why Hire Me** — capability cards
+- **Projects** — filterable project grid
+- **Blog** — latest posts preview
+- **Support** — contribution links (Ko-fi, Buy Me a Coffee, PayPal)
+- **Experience** — work timeline
 
-https://portfolio-blog-starter.vercel.app
+## Stack
 
-## How to Use
+| Layer | Tech |
+|-------|------|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript 5.9 |
+| Styling | Tailwind CSS v4 via `@tailwindcss/postcss` |
+| Content | MDX via `next-mdx-remote/rsc` |
+| Syntax Highlighting | `sugar-high` |
+| Font | Geist |
+| Analytics | Vercel Analytics + Speed Insights |
 
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+## Commands
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+npm run dev      # development server
+npm run build    # production build + TypeScript check
+npm run start    # start production server
 ```
 
-Then, run Next.js in development mode:
+## Project Structure
 
-```bash
-pnpm dev
+```
+app/
+├── blog/              # blog list + [slug] detail pages
+│   └── posts/         # MDX blog posts
+├── projects/          # project list + [slug] detail pages
+│   └── list/          # MDX project entries
+├── components/        # React components
+│   ├── hero.tsx       # hero section
+│   ├── nav.tsx        # sticky navbar
+│   ├── timeline.tsx   # experience timeline
+│   ├── contribute.tsx # contribution section
+│   ├── support.tsx    # support placeholder
+│   ├── project-cards.tsx
+│   ├── blog-preview.tsx
+│   ├── language-toggle.tsx
+│   ├── theme-toggle.tsx
+│   └── mdx.tsx        # MDX rendering (CustomMDX)
+├── lib/
+│   ├── i18n.tsx       # EN/PT-BR translations + context
+│   └── utils.ts       # shared utilities
+├── og/                # dynamic OG images
+├── rss/               # RSS feed
+├── sitemap.ts         # sitemap + robots
+└── layout.tsx         # root layout
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+## Content
+
+Blog posts and projects are written in MDX with custom-parsed frontmatter:
+
+```mdx
+---
+title: My Title
+publishedAt: 2024-01-01
+summary: Description text
+---
+```
+
+## Internationalization
+
+EN and PT-BR via React context (`LanguageProvider`). Toggle in the navbar.
+
+## Deploy
+
+Designed for Vercel deployment.
