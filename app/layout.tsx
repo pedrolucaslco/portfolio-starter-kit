@@ -2,10 +2,9 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
+import { AppShell } from './components/app-shell'
 import { LanguageProvider } from './lib/i18n'
 import { baseUrl } from './sitemap'
 
@@ -86,11 +85,7 @@ export default function RootLayout({
         />
         <div className="relative z-10 min-h-screen border-x border-[#e5e5e5] dark:border-[#262626] max-w-7xl mx-auto bg-white/95 dark:bg-neutral-950/95">
           <LanguageProvider>
-            <Navbar />
-            <main className="flex-auto min-w-0 flex flex-col w-full">
-              {children}
-            </main>
-            <Footer />
+            <AppShell>{children}</AppShell>
           </LanguageProvider>
         </div>
         <Analytics />

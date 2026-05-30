@@ -83,7 +83,7 @@ function createHeading(level) {
   return Heading
 }
 
-function PhoneFrame() {
+export function PhoneFrame() {
   return (
     <svg viewBox="0 0 280 568" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[260px] h-auto mx-auto">
       <rect x="4" y="4" width="272" height="560" rx="34" stroke="currentColor" strokeWidth="6" className="text-neutral-400 dark:text-neutral-500" />
@@ -145,7 +145,7 @@ function PhoneFrame() {
   )
 }
 
-function ProductHero({ title, description, ctaHref, ctaText, ghHref }: { title: string; description: string; ctaHref: string; ctaText: string; ghHref: string }) {
+export function ProductHero({ title, description, ctaHref, ctaText, ghHref }: { title: string; description: string; ctaHref: string; ctaText: string; ghHref: string }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16 not-prose">
       <div>

@@ -5,65 +5,36 @@ type: tools
 summary: 'Feira is an offline-first grocery list PWA that helps you track your monthly budget, organize items by sections, and share lists with family in real time.'
 ---
 
-<ProductHero
-  title="Sua lista de compras inteligente"
-  description="Organize suas compras, acompanhe seu orçamento mensal e compartilhe a lista com quem precisa — tudo offline, direto do celular."
-  ctaHref="https://feira-flame.vercel.app"
-  ctaText="Abrir o App"
-  ghHref="https://github.com/pedrolucaslco/feira"
+import Image from 'next/image'
+
+<Image
+  src="/images/feira.jpg"
+  alt="Feira app screenshot"
+  width={600}
+  height={400}
 />
 
-<div className="prose prose-neutral dark:prose-invert max-w-none">
+**Feira** is a grocery list PWA focused on budget tracking, real-time sharing, and offline-first reliability. Built with vanilla JS and IndexedDB, it works without internet and syncs via Supabase when available.
 
-Chega de papel, notas soltas no WhatsApp e esquecer o que precisava comprar. O **Feira** transforma sua lista de compras em algo simples, rápido e organizado — direto do celular, sem precisar instalar nada.
+## Key features
 
-## Para quem é?
+- **Offline-first** — IndexedDB local persistence with Supabase sync
+- **Real-time sharing** — items sync between users in the same space
+- **Budget tracking** — monthly budget, weekly suggested spend, card closing date
+- **Active purchase session** — timer, total on finish, recently bought section
+- **Custom sections** — organize items by category with drag-and-drop
+- **Meals tab** — isolated meal lists with one-click copy to shopping list
+- **Purchase history** — spending chart, median line, period filtering
+- **Dark/light themes** — DaisyUI emerald (light) and dim (dark)
 
-Para **quem faz mercado** — sozinho, com a família ou com colegas de casa. Se você já perdeu a conta do quanto gastou no mercado, já comprou algo que já tinha em casa ou já dividiu lista com alguém, o Feira foi feito pra você.
+## Stack
 
-## Por que usar?
+HTML, CSS, JavaScript vanilla, IndexedDB, Service Worker, DaisyUI/Tailwind, Supabase (optional), Vercel.
 
-**Controle do orçamento**
-Defina quanto quer gastar no mês e veja em tempo real quanto ainda pode gastar na semana. Sem surpresas na hora de pagar.
+## Links
 
-**Lista sempre organizada**
-Crie seções do jeito que fizer sentido pra você: laticínios, limpeza, hortifrúti… o que preferir. Os itens ficam onde você colocou, e dá pra arrastar entre seções.
+[Live App](https://feira-flame.vercel.app) · [GitHub](https://github.com/pedrolucaslco/feira)
 
-**Compra ativa com cronômetro**
-Ative uma compra, marque os itens enquanto percorre o mercado e veja o total acumulado. Ao finalizar, o app registra tudo automaticamente.
+---
 
-**Compartilhe com quem precisa**
-Crie um espaço compartilhado e adicione quem mora com você. Cada um marca os itens no seu próprio celular, e a lista sincroniza em tempo real.
-
-**Funciona sem internet**
-O Feira foi feito pra funcionar onde você estiver — dentro do mercado, no subsolo, em área com sinal fraco. Tudo fica salvo no celular e sincroniza quando houver conexão.
-
-## Como começar
-
-1. Acesse o link
-2. Adicione seus itens
-3. Pronto — sua lista já está salva
-
-Sem cadastro, sem instalação, sem complicação.
-
-</div>
-
-<div className="not-prose mt-12 pt-8 border-t border-[#e5e5e5] dark:border-[#262626] flex flex-wrap gap-4 justify-center">
-  <a
-    href="https://feira-flame.vercel.app"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-900 dark:border-neutral-100 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 px-6 py-3 hover:opacity-80 transition-opacity"
-  >
-    Abrir o App
-  </a>
-  <a
-    href="https://github.com/pedrolucaslco/feira"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 text-sm border border-[#e5e5e5] dark:border-[#262626] px-6 py-3 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-[#f2f2f2] dark:hover:bg-[#141414] transition-colors"
-  >
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" /></svg>
-    Código no GitHub
-  </a>
-</div>
+Design & Development: [Pedro Lucas](https://pedrolucaslco.vercel.app)
