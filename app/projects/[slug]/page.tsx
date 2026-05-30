@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }) {
         }}
       />
       {isFeira ? (
-        <div className="max-w-4xl mx-auto pt-4">
+        <div className="max-w-4xl mx-auto pt-4 pb-16">
           <CustomMDX source={project.content} />
         </div>
       ) : (
